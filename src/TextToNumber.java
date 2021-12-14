@@ -9,7 +9,7 @@ public class TextToNumber {
 	static Scanner sc = new Scanner(System.in);
 	static String input;
 	static String[] spliter = new String[] {
-		"tỉ", "triệu", "nghìn", "trăm", "mươi", "mười", "linh", "lẻ"
+		"tỷ", "tỉ", "triệu", "vạn", "nghìn", "ngàn", "trăm", "mươi", "mười", "linh", "lẻ"
 	};
 	
 	static HashMap<String, Long> value = new HashMap<>();
@@ -61,9 +61,12 @@ public class TextToNumber {
 	}
 	
 	private static void initialize() {
+		value.put("tỷ", (long) 1000000000);
 		value.put("tỉ", (long) 1000000000);
 		value.put("triệu", (long) 1000000);
+		value.put("vạn", (long) 10000);
 		value.put("nghìn", (long) 1000);
+		value.put("ngàn", (long) 1000);
 		value.put("trăm", (long) 100);
 		value.put("mươi", (long) 10);
 		value.put("mười", (long) 10);
